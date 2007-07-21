@@ -1,12 +1,12 @@
 %define name libqwtplot3d
-%define version 0.2.6
-%define release %mkrel 2
+%define version 0.2.7
+%define release %mkrel 1
 
 %define fakename  qwtplot3d
 
 %define major 0
 %define libname %mklibname %{fakename} %major
-%define libnamedev %mklibname %{fakename} %major -d
+%define libnamedev %mklibname %{fakename}  -d
 
 
 Name: %name
@@ -21,13 +21,11 @@ Source: http://puzzle.dl.sourceforge.net/sourceforge/qwtplot3d/qwtplot3d-%versio
 BuildRequires: fontconfig 
 BuildRequires: freetype2 
 BuildRequires: gcc-c++ 
-BuildRequires: qt3-devel 
+BuildRequires: qt4-devel 
 BuildRequires: libstdc++-devel 
 BuildRequires: X11-devel 
 BuildRequires: xorg-x11 
 BuildRoot: %{_tmppath}/%{name}-root
-
-%define qtdir %_prefix/lib/qt3
 
 %description
 QwtPlot3D is a feature-rich Qt/OpenGL-based C++ programming library.
@@ -45,8 +43,9 @@ It provides essentially a bunch of 3D-widgets for programmers.
 %package -n %libnamedev
 Summary: Development tools for programs which uses QwtPlot3D Widget set
 Group: Development/Other
-Requires: %libname = %version
-Provides: libqwtplot3d-devel 
+Requires: %libname = %version-%release
+Provides: %{name}-devel = %version-%release
+Obsoletes: %{libname}-devel
 
 %description -n %libnamedev
 QwtPlot3D is a feature-rich Qt/OpenGL-based C++ programming library.
@@ -56,9 +55,7 @@ It provides essentially a bunch of 3D-widgets for programmers.
 %setup -q -n qwtplot3d
 
 %build
-export QTDIR=%qtdir
-export PATH=$QTDIR/bin:$PATH
-qmake qwtplot3d.pro
+%{qt4dir}/bin/qmake qwtplot3d.pro
 make
 
 %install
@@ -88,6 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %libnamedev
 %defattr(-,root,root)
-%qtdir/include/qwtplot3d
-%{_libdir}/libqwtplot3d.so
+%{_includedir}/*
+%{_libdir}/*.so
 
