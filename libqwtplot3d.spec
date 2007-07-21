@@ -59,11 +59,11 @@ It provides essentially a bunch of 3D-widgets for programmers.
 make
 
 %install
-mkdir -p %buildroot%qtdir/include/qwtplot3d
+mkdir -p %buildroot%{_includedir}
 mkdir -p %buildroot%_libdir
 
 for n in include/*.h ; do
-    install -m 644 $n %buildroot%qtdir/include/qwtplot3d
+    install -m 644 $n %buildroot%{_includedir}
 done
 
 # install, preserving links
@@ -87,4 +87,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.so
-
