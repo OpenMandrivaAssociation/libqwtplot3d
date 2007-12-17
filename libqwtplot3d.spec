@@ -25,7 +25,6 @@ BuildRequires: qt4-devel
 BuildRequires: libstdc++-devel 
 BuildRequires: X11-devel 
 BuildRequires: xorg-x11 
-BuildRoot: %{_tmppath}/%{name}-root
 
 %description
 QwtPlot3D is a feature-rich Qt/OpenGL-based C++ programming library.
