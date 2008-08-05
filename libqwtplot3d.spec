@@ -1,6 +1,6 @@
 %define name libqwtplot3d
 %define version 0.2.7
-%define release %mkrel 3
+%define release %mkrel 4
 
 %define fakename  qwtplot3d
 
@@ -8,29 +8,22 @@
 %define libname %mklibname %{fakename} %major
 %define libnamedev %mklibname %{fakename}  -d
 
-
 Name: %name
 Version: %version
 Release: %release
 Summary: 3D plotting widget extension to the Qt GUI
-License: LGPL
+License: zlib
 Group: System/Libraries
 Url: http://qwtplot3d.sourceforge.net/
 Source: http://puzzle.dl.sourceforge.net/sourceforge/qwtplot3d/qwtplot3d-%version.tar.bz2
-# Automatically added by buildreq on Fri Dec 03 2004
-BuildRequires: fontconfig 
-BuildRequires: freetype2 
-BuildRequires: gcc-c++ 
-BuildRequires: qt4-devel 
-BuildRequires: libstdc++-devel 
-BuildRequires: X11-devel 
-BuildRequires: xorg-x11 
+BuildRequires: qt4-devel
+BuildRequires: zlib-devel
+BuildRequires: mesaglu-devel
 BuildRoot: %{_tmppath}/%{name}-root
 
 %description
 QwtPlot3D is a feature-rich Qt/OpenGL-based C++ programming library.
 It provides essentially a bunch of 3D-widgets for programmers.
-
 
 %package -n %libname
 Summary: 3D plotting widget extension to the Qt GUI
@@ -55,8 +48,8 @@ It provides essentially a bunch of 3D-widgets for programmers.
 %setup -q -n qwtplot3d
 
 %build
-%{qt4dir}/bin/qmake qwtplot3d.pro
-make
+%qmake_qt4
+%make
 
 %install
 mkdir -p %buildroot%{_includedir}
