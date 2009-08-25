@@ -1,6 +1,6 @@
 %define name libqwtplot3d
 %define version 0.2.7
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define fakename  qwtplot3d
 
@@ -16,6 +16,7 @@ License: zlib
 Group: System/Libraries
 Url: http://qwtplot3d.sourceforge.net/
 Source: http://puzzle.dl.sourceforge.net/sourceforge/qwtplot3d/qwtplot3d-%version.tar.bz2
+Patch0: qwtplot3d-gcc44.patch
 BuildRequires: qt4-devel
 BuildRequires: zlib-devel
 BuildRequires: mesaglu-devel
@@ -46,6 +47,7 @@ It provides essentially a bunch of 3D-widgets for programmers.
 
 %prep
 %setup -q -n qwtplot3d
+%patch0 -p1
 
 %build
 %qmake_qt4
@@ -78,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %libname
 %defattr (-,root,root)
-%{_libdir}/libqwtplot3d.so.*
+%{_libdir}/libqwtplot3d.so.%{major}*
 
 %files -n %libnamedev
 %defattr(-,root,root)
