@@ -1,6 +1,6 @@
 %define name libqwtplot3d
 %define version 0.2.7
-%define release %mkrel 5
+%define release %mkrel 6
 
 %define fakename  qwtplot3d
 
