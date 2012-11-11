@@ -1,0 +1,11 @@
+diff -urN qwtplot3d/qwtplot3d.pro qwtplot3d-patched/qwtplot3d.pro
+--- qwtplot3d/qwtplot3d.pro	2012-04-29 00:30:53.117878647 +1100
++++ qwtplot3d-patched/qwtplot3d.pro	2012-04-29 00:31:06.583886205 +1100
+@@ -91,5 +91,5 @@
+ zlib {
+   DEFINES += GL2PS_HAVE_ZLIB
+   win32:LIBS += zlib.lib
+-	unix:LIBS  += -lz
++	unix:LIBS  += -lz -lGLU
+ }
+\ В конце файла нет новой строки

@@ -1,0 +1,33 @@
+diff -urN qwtplot3d/include/qwt3d_function.h qwtplot3d-patched/include/qwt3d_function.h
+--- qwtplot3d/include/qwt3d_function.h	2005-07-11 01:54:52.000000000 +1100
++++ qwtplot3d-patched/include/qwt3d_function.h	2012-04-29 00:21:58.000000000 +1100
+@@ -2,6 +2,7 @@
+ #define qwt3d_function_h__2004_03_05_13_51_begin_guarded_code
+ 
+ #include "qwt3d_gridmapping.h"
++#include <cstdio>
+ 
+ namespace Qwt3D
+ {
+diff -urN qwtplot3d/include/qwt3d_helper.h qwtplot3d-patched/include/qwt3d_helper.h
+--- qwtplot3d/include/qwt3d_helper.h	2005-07-20 02:40:28.000000000 +1100
++++ qwtplot3d-patched/include/qwt3d_helper.h	2012-04-29 00:23:02.000000000 +1100
+@@ -5,6 +5,7 @@
+ #include <float.h>
+ #include <vector>
+ #include <algorithm>
++#include <GL/glu.h>
+ 
+ namespace
+ {
+diff -urN qwtplot3d/include/qwt3d_openglhelper.h qwtplot3d-patched/include/qwt3d_openglhelper.h
+--- qwtplot3d/include/qwt3d_openglhelper.h	2005-07-20 02:40:28.000000000 +1100
++++ qwtplot3d-patched/include/qwt3d_openglhelper.h	2012-04-29 00:24:03.000000000 +1100
+@@ -7,6 +7,7 @@
+ #else
+ #include <QtOpenGL/qgl.h>
+ #endif
++#include <GL/glu.h>
+ 
+ namespace Qwt3D
+ {
