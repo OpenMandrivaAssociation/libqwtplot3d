@@ -7,7 +7,7 @@
 Summary:	3D plotting widget extension to the Qt GUI
 Name:		libqwtplot3d
 Version:	0.2.7
-Release:	8
+Release:	9
 License:	zlib
 Group:		System/Libraries
 Url:		http://qwtplot3d.sourceforge.net/
