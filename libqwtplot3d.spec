@@ -10,7 +10,7 @@ Version:	0.2.7
 Release:	9
 License:	zlib
 Group:		System/Libraries
-Url:		http://qwtplot3d.sourceforge.net/
+Url:		https://qwtplot3d.sourceforge.net/
 Source0:	http://puzzle.dl.sourceforge.net/sourceforge/qwtplot3d/qwtplot3d-%{version}.tar.bz2
 Patch0:		qwtplot3d-0.2.7-headers.patch
 Patch1:		qwtplot3d-0.2.7-linkage.patch
